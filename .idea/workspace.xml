@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b9dff28b-268e-4003-b3cb-dc00fc5c2cfa" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SpringCRUD" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SpringCRUD" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="SpringCRUD" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1my8PCQ7GaDG1xfNmHRbR78JSEX" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="oracle" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.43678162" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.DataSourceTest.testConnection">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataSourceTest.testConnection" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;org.zerock.persistence.DataSourceTest.testConnection&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="JDBCTests.testConection" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;org.zerock.persistence.JDBCTests.testConection&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="JDBCTests.testConnection" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;org.zerock.persistence.JDBCTests.testConnection&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SpringCRUDProject [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SpringCRUDProject [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat 9.0.403" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.403" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Gradle : org.zerock : SpringCRUD-1.0-SNAPSHOT.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_SpringCRUD_2" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="58754" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : org.zerock : SpringCRUD-1.0-SNAPSHOT.war" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.JDBCTests.testConection" />
+      <item itemvalue="Gradle.SpringCRUDProject [build]" />
+      <item itemvalue="Gradle.SpringCRUDProject [clean]" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.403" />
+      <item itemvalue="Gradle.JDBCTests.testConnection" />
+      <item itemvalue="Gradle.DataSourceTest.testConnection" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.DataSourceTest.testConnection" />
+        <item itemvalue="Gradle.SpringCRUDProject [build]" />
+        <item itemvalue="Gradle.JDBCTests.testConnection" />
+        <item itemvalue="Gradle.JDBCTests.testConection" />
+        <item itemvalue="Gradle.SpringCRUDProject [clean]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b9dff28b-268e-4003-b3cb-dc00fc5c2cfa" name="Default Changelist" comment="" />
+      <created>1610454443812</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610454443812</updated>
+      <workItem from="1610454444834" duration="4004000" />
+      <workItem from="1610549513269" duration="2151000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="384" y="133" key="#Project_Structure" timestamp="1610549639187">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="384" y="133" key="#Project_Structure/0.0.1792.1120@0.0.1792.1120" timestamp="1610549639187" />
+    <state x="384" y="153" key="#Project_Structure/0.23.1792.1097@0.23.1792.1097" timestamp="1610539092940" />
+    <state x="207" y="156" width="1071" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610549888610">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="207" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1610549888610" />
+    <state x="360" y="233" width="1071" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1610454505672" />
+    <state width="1750" height="297" key="GridCell.Tab.0.bottom" timestamp="1610551768544">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="312" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1610550837219" />
+    <state width="1750" height="297" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1610551768544" />
+    <state width="1750" height="297" key="GridCell.Tab.0.center" timestamp="1610551768543">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="312" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1610550837217" />
+    <state width="1750" height="297" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1610551768543" />
+    <state width="1750" height="297" key="GridCell.Tab.0.left" timestamp="1610551768543">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="312" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1610550837217" />
+    <state width="1750" height="297" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1610551768543" />
+    <state width="1750" height="297" key="GridCell.Tab.0.right" timestamp="1610551768544">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state width="875" height="312" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1610550837218" />
+    <state width="1750" height="297" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1610551768544" />
+    <state width="1204" height="298" key="GridCell.Tab.1.bottom" timestamp="1610549499194">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1204" height="298" key="GridCell.Tab.1.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1610549499194" />
+    <state width="1204" height="298" key="GridCell.Tab.1.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1610539592490" />
+    <state width="1204" height="298" key="GridCell.Tab.1.center" timestamp="1610549499193">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1204" height="298" key="GridCell.Tab.1.center/0.0.1792.1120@0.0.1792.1120" timestamp="1610549499193" />
+    <state width="1204" height="298" key="GridCell.Tab.1.center/0.23.1792.1097@0.23.1792.1097" timestamp="1610539592489" />
+    <state width="1204" height="298" key="GridCell.Tab.1.left" timestamp="1610549499192">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1204" height="298" key="GridCell.Tab.1.left/0.0.1792.1120@0.0.1792.1120" timestamp="1610549499192" />
+    <state width="1204" height="298" key="GridCell.Tab.1.left/0.23.1792.1097@0.23.1792.1097" timestamp="1610539592489" />
+    <state width="1204" height="298" key="GridCell.Tab.1.right" timestamp="1610549499194">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1204" height="298" key="GridCell.Tab.1.right/0.0.1792.1120@0.0.1792.1120" timestamp="1610549499194" />
+    <state width="1204" height="298" key="GridCell.Tab.1.right/0.23.1792.1097@0.23.1792.1097" timestamp="1610539592489" />
+    <state width="1204" height="298" key="GridCell.Tab.2.bottom" timestamp="1610549499197">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1204" height="298" key="GridCell.Tab.2.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1610549499197" />
+    <state width="1204" height="298" key="GridCell.Tab.2.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1610539592490" />
+    <state width="1204" height="298" key="GridCell.Tab.2.center" timestamp="1610549499196">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1204" height="298" key="GridCell.Tab.2.center/0.0.1792.1120@0.0.1792.1120" timestamp="1610549499196" />
+    <state width="1204" height="298" key="GridCell.Tab.2.center/0.23.1792.1097@0.23.1792.1097" timestamp="1610539592490" />
+    <state width="1204" height="298" key="GridCell.Tab.2.left" timestamp="1610549499195">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1204" height="298" key="GridCell.Tab.2.left/0.0.1792.1120@0.0.1792.1120" timestamp="1610549499195" />
+    <state width="1204" height="298" key="GridCell.Tab.2.left/0.23.1792.1097@0.23.1792.1097" timestamp="1610539592490" />
+    <state width="1204" height="298" key="GridCell.Tab.2.right" timestamp="1610549499196">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state width="1204" height="298" key="GridCell.Tab.2.right/0.0.1792.1120@0.0.1792.1120" timestamp="1610549499196" />
+    <state width="1204" height="298" key="GridCell.Tab.2.right/0.23.1792.1097@0.23.1792.1097" timestamp="1610539592490" />
+    <state x="384" y="133" key="SettingsEditor" timestamp="1610550998733">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="384" y="133" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1610550998733" />
+    <state x="384" y="153" key="SettingsEditor/0.23.1792.1097@0.23.1792.1097" timestamp="1610548341711" />
+    <state x="561" y="268" width="670" height="676" key="search.everywhere.popup" timestamp="1610551124767">
+      <screen x="0" y="23" width="1792" height="1097" />
+    </state>
+    <state x="561" y="250" width="670" height="691" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1610550619488" />
+    <state x="561" y="268" width="670" height="676" key="search.everywhere.popup/0.23.1792.1097@0.23.1792.1097" timestamp="1610551124767" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/org/zerock/persistence/JDBCTests.java</url>
+          <line>24</line>
+          <properties class="org.zerock.persistence.JDBCTests" method="testConnection">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
