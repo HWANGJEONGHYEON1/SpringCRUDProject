@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.zerock.domain.BoardVO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
@@ -19,5 +20,52 @@ public class BoardMapperTests {
     @Test
     public void selectBoard() {
         mapper.getList().forEach(board -> log.info(board));
+    }
+
+    @Test
+    public void createBoardInsert() {
+        BoardVO board = new BoardVO();
+        board.setTitle("새로 작성한 테스트 글");
+        board.setContent("새로 작성한 테스트 내용");
+        board.setWriter("새로 작성한 테스트 작성자");
+
+        mapper.insert(board);
+        log.info(board);
+    }
+
+    @Test
+    public void createBoardInsertSelectKey(){
+        BoardVO board = new BoardVO();
+
+        board.setTitle("새로 작성한 테스트 글 1");
+        board.setContent("새로 작성한 테스트 내용 2");
+        board.setWriter("새로 작성한 테스트 작성자 3");
+
+        mapper.insertSelectKey(board);
+        log.info(board);
+    }
+
+    @Test
+    public void testRead() {
+        BoardVO board = mapper.read(9L);
+        log.info(board);
+    }
+
+    @Test
+    public void testDelete(){
+
+        log.info(" # DELETE COUNT " + mapper.delete(3L));
+    }
+
+    @Test
+    public void testUpdate() {
+        BoardVO board = new BoardVO();
+        board.setTitle("카카오 개발자");
+        board.setContent("카카오 개발자가 되기 위한 내용");
+        board.setWriter("쥬니어 개발자");
+
+        board.setBno(5L);
+        int count = mapper.update(board);
+        log.info("# update : " + count);
     }
 }

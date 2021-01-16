@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.zerock.controller.BoardControllerTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-01-16T10:40:41" hostname="hwangjeonghyeon-ui-MacBookPro.local" time="0.145">
+  <properties/>
+  <testcase name="testRemove" classname="org.zerock.controller.BoardControllerTests" time="0.145"/>
+  <system-out><![CDATA[INFO  [WebTestContextBootstrapper:248] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+INFO  [WebTestContextBootstrapper:177] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@24a13a4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3c0a92d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@40160df4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1fa6c3b5, org.springframework.test.context.transaction.TransactionalTestExecutionListener@4d2334d6, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4b2c659e]
+INFO  [XmlBeanDefinitionReader:316] - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/spring/root-context.xml]
+INFO  [XmlBeanDefinitionReader:316] - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml]
+INFO  [GenericWebApplicationContext:590] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@124f30fa: startup date [Sat Jan 16 19:40:40 KST 2021]; root of context hierarchy
+INFO  [AutowiredAnnotationBeanPostProcessor:154] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+INFO  [HikariDataSource:71] - HikariPool-1 - Starting...
+INFO  [connection:541] - 1. Connection opened
+INFO  [audit:175] - 1. Connection.new Connection returned 
+INFO  [PoolBase:526] - HikariPool-1 - Driver does not support get/set network timeout for connections. (net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy.getNetworkTimeout()I)
+INFO  [audit:175] - 1. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 1. Connection.setAutoCommit(true) returned 
+INFO  [audit:175] - 1. Connection.isValid(1) returned true
+INFO  [audit:175] - 1. Connection.getTransactionIsolation() returned 2
+INFO  [HikariDataSource:73] - HikariPool-1 - Start completed.
+INFO  [connection:541] - 2. Connection opened
+INFO  [audit:175] - 2. Connection.new Connection returned 
+INFO  [audit:175] - 2. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 2. Connection.setAutoCommit(true) returned 
+INFO  [connection:541] - 3. Connection opened
+INFO  [audit:175] - 3. Connection.new Connection returned 
+INFO  [audit:175] - 3. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 3. Connection.setAutoCommit(true) returned 
+INFO  [connection:541] - 4. Connection opened
+INFO  [audit:175] - 4. Connection.new Connection returned 
+INFO  [audit:175] - 4. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 4. Connection.setAutoCommit(true) returned 
+INFO  [RequestMappingHandlerMapping:547] - Mapped "{[/board/modify],methods=[POST]}" onto public java.lang.String org.zerock.controller.BoardController.modify(org.zerock.domain.BoardVO,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+INFO  [RequestMappingHandlerMapping:547] - Mapped "{[/board/remove],methods=[POST]}" onto public java.lang.String org.zerock.controller.BoardController.remove(java.lang.Long,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+INFO  [RequestMappingHandlerMapping:547] - Mapped "{[/board/get],methods=[GET]}" onto public void org.zerock.controller.BoardController.get(java.lang.Long,org.springframework.ui.Model)
+INFO  [RequestMappingHandlerMapping:547] - Mapped "{[/board/register],methods=[POST]}" onto public java.lang.String org.zerock.controller.BoardController.register(org.zerock.domain.BoardVO,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+INFO  [RequestMappingHandlerMapping:547] - Mapped "{[/board/list],methods=[GET]}" onto public void org.zerock.controller.BoardController.list(org.springframework.ui.Model)
+INFO  [connection:541] - 5. Connection opened
+INFO  [audit:175] - 5. Connection.new Connection returned 
+INFO  [audit:175] - 5. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 5. Connection.setAutoCommit(true) returned 
+INFO  [connection:541] - 6. Connection opened
+INFO  [audit:175] - 6. Connection.new Connection returned 
+INFO  [audit:175] - 6. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 6. Connection.setAutoCommit(true) returned 
+INFO  [connection:541] - 7. Connection opened
+INFO  [audit:175] - 7. Connection.new Connection returned 
+INFO  [audit:175] - 7. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 7. Connection.setAutoCommit(true) returned 
+INFO  [connection:541] - 8. Connection opened
+INFO  [audit:175] - 8. Connection.new Connection returned 
+INFO  [audit:175] - 8. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 8. Connection.setAutoCommit(true) returned 
+INFO  [connection:541] - 9. Connection opened
+INFO  [audit:175] - 9. Connection.new Connection returned 
+INFO  [audit:175] - 9. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 9. Connection.setAutoCommit(true) returned 
+INFO  [RequestMappingHandlerAdapter:574] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@124f30fa: startup date [Sat Jan 16 19:40:40 KST 2021]; root of context hierarchy
+INFO  [connection:541] - 10. Connection opened
+INFO  [audit:175] - 10. Connection.new Connection returned 
+INFO  [audit:175] - 10. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 10. Connection.setAutoCommit(true) returned 
+INFO  [RequestMappingHandlerAdapter:574] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@124f30fa: startup date [Sat Jan 16 19:40:40 KST 2021]; root of context hierarchy
+INFO  [MockServletContext:438] - Initializing Spring FrameworkServlet ''
+INFO  [TestDispatcherServlet:494] - FrameworkServlet '': initialization started
+INFO  [TestDispatcherServlet:509] - FrameworkServlet '': initialization completed in 9 ms
+INFO  [BoardController:57] -  #Controller, remove 9
+INFO  [BoardServiceImpl:37] -  #Service, remove
+INFO  [audit:175] - 1. Connection.isValid(5) returned true
+INFO  [audit:175] - 1. Connection.getAutoCommit() returned true
+INFO  [audit:175] - 1. PreparedStatement.new PreparedStatement returned 
+INFO  [audit:175] - 1. Connection.prepareStatement(delete from tbl_board where bno = ?) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@482bb888
+INFO  [audit:175] - 1. PreparedStatement.setLong(1, 9) returned 
+INFO  [sqlonly:228] - delete from tbl_board where bno = 9 
+
+INFO  [sqltiming:373] - delete from tbl_board where bno = 9 
+ {executed in 6 msec}
+INFO  [audit:175] - 1. PreparedStatement.execute() returned false
+INFO  [audit:175] - 1. PreparedStatement.getUpdateCount() returned 1
+INFO  [audit:175] - 1. PreparedStatement.isClosed() returned false
+INFO  [audit:175] - 1. PreparedStatement.close() returned 
+INFO  [audit:175] - 1. Connection.clearWarnings() returned 
+INFO  [BoardControllerTests:80] - redirect:/board/list
+]]></system-out>
+  <system-err><![CDATA[log4j:WARN No such property [tã]]>&#x97;<![CDATA[arget] in org.apache.log4j.ConsoleAppender.
+]]></system-err>
+</testsuite>

@@ -96,7 +96,7 @@
       <recent name="$PROJECT_DIR$/lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.BoardMapperTests.selectBoard">
+  <component name="RunManager" selected="Gradle.BoardServiceTest.testDelete">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -110,12 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardMapperTests.selectBoard" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BoardServiceTest.testDelete" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;org.zerock.mapper.BoardMapperTests.selectBoard&quot;" />
+        <option name="scriptParameters" value="--tests &quot;org.zerock.service.BoardServiceTest.testDelete&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -129,12 +129,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="DataSourceTest.testConnection" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BoardServiceTest.testGet" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;org.zerock.persistence.DataSourceTest.testConnection&quot;" />
+        <option name="scriptParameters" value="--tests &quot;org.zerock.service.BoardServiceTest.testGet&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -148,12 +148,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="DataSourceTest.testMyBatis" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BoardServiceTest.testGetList" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;org.zerock.persistence.DataSourceTest.testMyBatis&quot;" />
+        <option name="scriptParameters" value="--tests &quot;org.zerock.service.BoardServiceTest.testGetList&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -167,12 +167,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="JDBCTests.testConnection" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BoardServiceTest.testModify" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;org.zerock.persistence.JDBCTests.testConnection&quot;" />
+        <option name="scriptParameters" value="--tests &quot;org.zerock.service.BoardServiceTest.testModify&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -186,23 +186,23 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SpringCRUDProject [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BoardServiceTest.testRegister" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--tests &quot;org.zerock.service.BoardServiceTest.testRegister&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value=":test" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <configuration name="Tomcat 9.0.403" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.403" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -278,20 +278,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.SpringCRUDProject [build]" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.403" />
-      <item itemvalue="Gradle.JDBCTests.testConnection" />
-      <item itemvalue="Gradle.DataSourceTest.testConnection" />
-      <item itemvalue="Gradle.DataSourceTest.testMyBatis" />
-      <item itemvalue="Gradle.BoardMapperTests.selectBoard" />
+      <item itemvalue="Gradle.BoardServiceTest.testRegister" />
+      <item itemvalue="Gradle.BoardServiceTest.testGetList" />
+      <item itemvalue="Gradle.BoardServiceTest.testGet" />
+      <item itemvalue="Gradle.BoardServiceTest.testModify" />
+      <item itemvalue="Gradle.BoardServiceTest.testDelete" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.BoardMapperTests.selectBoard" />
-        <item itemvalue="Gradle.DataSourceTest.testMyBatis" />
-        <item itemvalue="Gradle.JDBCTests.testConnection" />
-        <item itemvalue="Gradle.DataSourceTest.testConnection" />
-        <item itemvalue="Gradle.SpringCRUDProject [build]" />
+        <item itemvalue="Gradle.BoardServiceTest.testDelete" />
+        <item itemvalue="Gradle.BoardServiceTest.testModify" />
+        <item itemvalue="Gradle.BoardServiceTest.testGet" />
+        <item itemvalue="Gradle.BoardServiceTest.testGetList" />
+        <item itemvalue="Gradle.BoardServiceTest.testRegister" />
       </list>
     </recent_temporary>
   </component>
@@ -304,7 +304,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610454443812</updated>
       <workItem from="1610454444834" duration="4004000" />
-      <workItem from="1610549513269" duration="10845000" />
+      <workItem from="1610549513269" duration="14459000" />
     </task>
     <servers />
   </component>
@@ -322,28 +322,32 @@
     </state>
     <state x="207" y="156" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1610549888610" />
     <state x="360" y="233" width="1071" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1792.1097@0.23.1792.1097" timestamp="1610454505672" />
-    <state width="1878" height="297" key="GridCell.Tab.0.bottom" timestamp="1610706788024">
+    <state x="-1147" y="-84" key="#com.intellij.ide.util.MemberChooser" timestamp="1610790370802">
       <screen x="-1920" y="-334" width="1920" height="1080" />
     </state>
-    <state width="1878" height="297" key="GridCell.Tab.0.bottom/-1920.-334.1920.1080/0.0.1792.1120@-1920.-334.1920.1080" timestamp="1610706788024" />
+    <state x="-1147" y="-84" key="#com.intellij.ide.util.MemberChooser/-1920.-334.1920.1080/0.0.1792.1120@-1920.-334.1920.1080" timestamp="1610790370802" />
+    <state width="1878" height="297" key="GridCell.Tab.0.bottom" timestamp="1610791672934">
+      <screen x="-1920" y="-334" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="297" key="GridCell.Tab.0.bottom/-1920.-334.1920.1080/0.0.1792.1120@-1920.-334.1920.1080" timestamp="1610791672934" />
     <state width="875" height="312" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1610550837219" />
     <state width="1750" height="297" key="GridCell.Tab.0.bottom/0.23.1792.1097@0.23.1792.1097" timestamp="1610551768544" />
-    <state width="1878" height="297" key="GridCell.Tab.0.center" timestamp="1610706788023">
+    <state width="1878" height="297" key="GridCell.Tab.0.center" timestamp="1610791672932">
       <screen x="-1920" y="-334" width="1920" height="1080" />
     </state>
-    <state width="1878" height="297" key="GridCell.Tab.0.center/-1920.-334.1920.1080/0.0.1792.1120@-1920.-334.1920.1080" timestamp="1610706788023" />
+    <state width="1878" height="297" key="GridCell.Tab.0.center/-1920.-334.1920.1080/0.0.1792.1120@-1920.-334.1920.1080" timestamp="1610791672932" />
     <state width="875" height="312" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1610550837217" />
     <state width="1750" height="297" key="GridCell.Tab.0.center/0.23.1792.1097@0.23.1792.1097" timestamp="1610551768543" />
-    <state width="1878" height="297" key="GridCell.Tab.0.left" timestamp="1610706788022">
+    <state width="1878" height="297" key="GridCell.Tab.0.left" timestamp="1610791672932">
       <screen x="-1920" y="-334" width="1920" height="1080" />
     </state>
-    <state width="1878" height="297" key="GridCell.Tab.0.left/-1920.-334.1920.1080/0.0.1792.1120@-1920.-334.1920.1080" timestamp="1610706788022" />
+    <state width="1878" height="297" key="GridCell.Tab.0.left/-1920.-334.1920.1080/0.0.1792.1120@-1920.-334.1920.1080" timestamp="1610791672932" />
     <state width="875" height="312" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1610550837217" />
     <state width="1750" height="297" key="GridCell.Tab.0.left/0.23.1792.1097@0.23.1792.1097" timestamp="1610551768543" />
-    <state width="1878" height="297" key="GridCell.Tab.0.right" timestamp="1610706788023">
+    <state width="1878" height="297" key="GridCell.Tab.0.right" timestamp="1610791672933">
       <screen x="-1920" y="-334" width="1920" height="1080" />
     </state>
-    <state width="1878" height="297" key="GridCell.Tab.0.right/-1920.-334.1920.1080/0.0.1792.1120@-1920.-334.1920.1080" timestamp="1610706788023" />
+    <state width="1878" height="297" key="GridCell.Tab.0.right/-1920.-334.1920.1080/0.0.1792.1120@-1920.-334.1920.1080" timestamp="1610791672933" />
     <state width="875" height="312" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1610550837218" />
     <state width="1750" height="297" key="GridCell.Tab.0.right/0.23.1792.1097@0.23.1792.1097" timestamp="1610551768544" />
     <state width="1204" height="298" key="GridCell.Tab.1.bottom" timestamp="1610549499194">
@@ -391,10 +395,14 @@
     </state>
     <state x="384" y="133" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1610550998733" />
     <state x="384" y="153" key="SettingsEditor/0.23.1792.1097@0.23.1792.1097" timestamp="1610548341711" />
-    <state x="-1319" y="-93" width="718" height="666" key="search.everywhere.popup" timestamp="1610705983688">
+    <state x="-1252" y="-84" width="584" height="580" key="find.popup" timestamp="1610791119790">
       <screen x="-1920" y="-334" width="1920" height="1080" />
     </state>
-    <state x="-1319" y="-93" width="718" height="666" key="search.everywhere.popup/-1920.-334.1920.1080/0.0.1792.1120@-1920.-334.1920.1080" timestamp="1610705983688" />
+    <state x="-1252" y="-84" width="584" height="580" key="find.popup/-1920.-334.1920.1080/0.0.1792.1120@-1920.-334.1920.1080" timestamp="1610791119790" />
+    <state x="-1319" y="-93" width="718" height="666" key="search.everywhere.popup" timestamp="1610791488569">
+      <screen x="-1920" y="-334" width="1920" height="1080" />
+    </state>
+    <state x="-1319" y="-93" width="718" height="666" key="search.everywhere.popup/-1920.-334.1920.1080/0.0.1792.1120@-1920.-334.1920.1080" timestamp="1610791488569" />
     <state x="561" y="250" width="670" height="691" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1610550619488" />
     <state x="561" y="268" width="670" height="676" key="search.everywhere.popup/0.23.1792.1097@0.23.1792.1097" timestamp="1610551124767" />
   </component>
