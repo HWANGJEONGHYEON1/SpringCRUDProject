@@ -27,15 +27,25 @@ public class BoardController {
     }
 
     @GetMapping("/register")
-    public String register(BoardVO board, RedirectAttributes rttr) {
-        log.info(" #Controller, register " + board);
+    public void register() {
+        log.info(" #Controller, register ");
 
 //        service.register(board);
 //
 //        rttr.addAttribute("result", board.getBno());
 //
 //        return "redirect:/board/list";
-        return null;
+    }
+
+    @PostMapping("/register")
+    public String register(BoardVO board, RedirectAttributes rttr) {
+        log.info(" #Controller, register " + board);
+
+        service.register(board);
+
+        rttr.addAttribute("result", board.getBno());
+
+        return "redirect:/board/list";
     }
 
     @GetMapping({"/get", "/modify"})
