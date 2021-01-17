@@ -26,18 +26,19 @@ public class BoardController {
         model.addAttribute("list", service.getList());
     }
 
-    @PostMapping("/board/register")
+    @GetMapping("/register")
     public String register(BoardVO board, RedirectAttributes rttr) {
         log.info(" #Controller, register " + board);
 
-        service.register(board);
-
-        rttr.addAttribute("result", board.getBno());
-
-        return "redirect:/board/list";
+//        service.register(board);
+//
+//        rttr.addAttribute("result", board.getBno());
+//
+//        return "redirect:/board/list";
+        return null;
     }
 
-    @GetMapping("/get")
+    @GetMapping({"/get", "/modify"})
     public void get(@RequestParam("bno") Long bno, Model model){
         log.info(" #Controller, get " + bno);
         model.addAttribute("board", service.get(bno));
@@ -52,7 +53,7 @@ public class BoardController {
         return "redirect:/board/list";
     }
 
-    @PostMapping("remove")
+    @PostMapping("/remove")
     public String remove(@RequestParam("bno") Long bno, RedirectAttributes rttr){
         log.info(" #Controller, remove " + bno);
 
