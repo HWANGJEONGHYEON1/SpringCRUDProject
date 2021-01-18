@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.zerock.mapper.ReplyMapperTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-01-18T15:15:16" hostname="hwangjeonghyeon-ui-MacBookPro.local" time="0.11">
+  <properties/>
+  <testcase name="testUpdate" classname="org.zerock.mapper.ReplyMapperTests" time="0.11"/>
+  <system-out><![CDATA[INFO  [DefaultTestContextBootstrapper:248] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+INFO  [DefaultTestContextBootstrapper:177] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@19fec03c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@25481fef, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@58434f51, org.springframework.test.context.support.DirtiesContextTestExecutionListener@331088c4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5c8041ba, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@39d28aa2]
+INFO  [XmlBeanDefinitionReader:316] - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/spring/root-context.xml]
+INFO  [GenericApplicationContext:590] - Refreshing org.springframework.context.support.GenericApplicationContext@1e4ff34c: startup date [Tue Jan 19 00:15:15 KST 2021]; root of context hierarchy
+INFO  [AutowiredAnnotationBeanPostProcessor:154] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+INFO  [HikariDataSource:71] - HikariPool-1 - Starting...
+INFO  [connection:541] - 1. Connection opened
+INFO  [audit:175] - 1. Connection.new Connection returned 
+INFO  [PoolBase:526] - HikariPool-1 - Driver does not support get/set network timeout for connections. (net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy.getNetworkTimeout()I)
+INFO  [audit:175] - 1. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 1. Connection.setAutoCommit(true) returned 
+INFO  [audit:175] - 1. Connection.isValid(1) returned true
+INFO  [audit:175] - 1. Connection.getTransactionIsolation() returned 2
+INFO  [HikariDataSource:73] - HikariPool-1 - Start completed.
+INFO  [connection:541] - 2. Connection opened
+INFO  [audit:175] - 2. Connection.new Connection returned 
+INFO  [audit:175] - 2. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 2. Connection.setAutoCommit(true) returned 
+INFO  [connection:541] - 3. Connection opened
+INFO  [audit:175] - 3. Connection.new Connection returned 
+INFO  [audit:175] - 3. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 3. Connection.setAutoCommit(true) returned 
+INFO  [audit:175] - 1. Connection.getAutoCommit() returned true
+INFO  [connection:541] - 4. Connection opened
+INFO  [audit:175] - 4. Connection.new Connection returned 
+INFO  [audit:175] - 4. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 4. Connection.setAutoCommit(true) returned 
+INFO  [audit:175] - 1. PreparedStatement.new PreparedStatement returned 
+INFO  [audit:175] - 1. Connection.prepareStatement(select * from tbl_reply where rno = ?) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@652bc1d
+INFO  [audit:175] - 1. PreparedStatement.setLong(1, 122) returned 
+INFO  [sqlonly:228] - select * from tbl_reply where rno = 122 
+
+INFO  [connection:541] - 5. Connection opened
+INFO  [audit:175] - 5. Connection.new Connection returned 
+INFO  [audit:175] - 5. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 5. Connection.setAutoCommit(true) returned 
+INFO  [sqltiming:373] - select * from tbl_reply where rno = 122 
+ {executed in 11 msec}
+INFO  [audit:175] - 1. PreparedStatement.execute() returned true
+INFO  [resultset:175] - 1. ResultSet.new ResultSet returned 
+INFO  [audit:175] - 1. PreparedStatement.getResultSet() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@41d1e1f9
+INFO  [resultset:175] - 1. ResultSet.getMetaData() returned oracle.jdbc.driver.OracleResultSetMetaData@1d8c59ab
+INFO  [resultset:175] - 1. ResultSet.getType() returned 1003
+INFO  [resultset:175] - 1. ResultSet.next() returned true
+INFO  [resultset:175] - 1. ResultSet.getLong(RNO) returned 122
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getLong(BNO) returned 458748
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(REPLY) returned 댓글 테스트 2
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(REPLYER) returned replyer 2
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(REPLYDATE) returned 2021-01-18 14:56:09.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(UPDATEDATE) returned 2021-01-18 14:56:09.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultsettable:610] - 
+|----|-------|---------|----------|----------------------|----------------------|
+|rno |bno    |reply    |replyer   |replydate             |updatedate            |
+|----|-------|---------|----------|----------------------|----------------------|
+|122 |458748 |댓글 테스트 2 |replyer 2 |2021-01-18 14:56:09.0 |2021-01-18 14:56:09.0 |
+|----|-------|---------|----------|----------------------|----------------------|
+
+INFO  [resultset:175] - 1. ResultSet.next() returned false
+INFO  [resultset:175] - 1. ResultSet.close() returned void
+INFO  [audit:175] - 1. Connection.getMetaData() returned oracle.jdbc.driver.OracleDatabaseMetaData@66afcb61
+INFO  [audit:175] - 1. PreparedStatement.isClosed() returned false
+INFO  [audit:175] - 1. PreparedStatement.close() returned 
+INFO  [audit:175] - 1. Connection.clearWarnings() returned 
+INFO  [audit:175] - 1. Connection.getAutoCommit() returned true
+INFO  [audit:175] - 1. PreparedStatement.new PreparedStatement returned 
+INFO  [audit:175] - 1. Connection.prepareStatement(update tbl_reply set reply = ? , updateDate = sysdate where rno = ?) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@6f0b3ed0
+INFO  [audit:175] - 1. PreparedStatement.setString(1, "Update Reply") returned 
+INFO  [audit:175] - 1. PreparedStatement.setLong(2, 122) returned 
+INFO  [sqlonly:228] - update tbl_reply set reply = 'Update Reply' , updateDate = sysdate where rno = 122 
+
+INFO  [connection:541] - 6. Connection opened
+INFO  [audit:175] - 6. Connection.new Connection returned 
+INFO  [audit:175] - 6. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 6. Connection.setAutoCommit(true) returned 
+INFO  [sqltiming:373] - update tbl_reply set reply = 'Update Reply' , updateDate = sysdate where rno = 122 
+ {executed in 6 msec}
+INFO  [audit:175] - 1. PreparedStatement.execute() returned false
+INFO  [audit:175] - 1. PreparedStatement.getUpdateCount() returned 1
+INFO  [audit:175] - 1. PreparedStatement.isClosed() returned false
+INFO  [audit:175] - 1. PreparedStatement.close() returned 
+INFO  [audit:175] - 1. Connection.clearWarnings() returned 
+INFO  [ReplyMapperTests:67] - Update Count 1
+]]></system-out>
+  <system-err><![CDATA[log4j:WARN No such property [tã]]>&#x97;<![CDATA[arget] in org.apache.log4j.ConsoleAppender.
+]]></system-err>
+</testsuite>

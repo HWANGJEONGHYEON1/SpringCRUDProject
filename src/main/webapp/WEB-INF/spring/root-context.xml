@@ -23,6 +23,7 @@
     </bean>
 
     <context:component-scan base-package="org.zerock.controller"></context:component-scan>
+    <context:component-scan base-package="org.sample.controller"></context:component-scan>
     <context:component-scan base-package="org.zerock.service"></context:component-scan>
     <mybatis-spring:scan base-package="org.zerock.mapper"></mybatis-spring:scan>
 
