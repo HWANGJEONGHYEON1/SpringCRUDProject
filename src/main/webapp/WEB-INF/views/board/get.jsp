@@ -10,8 +10,14 @@ $(document).ready(function(){
 
    $("button[data-oper='modify']").on("click", function (e){
        operForm.attr("action", "/board/modify").submit();
+   });
 
-   })
+   $("button[data-oper='list']").on("click", function (e){
+       operForm.attr("action", "/board/list");
+       operForm.submit();
+    });
+
+    console.log(<c:out value='${pageMaker.cri.pageNum}'/>)
 });
 </script>
 <div class="row">
@@ -54,6 +60,11 @@ $(document).ready(function(){
 
                     <form id="openForm" action="/board/modify" method="get">
                         <input type="hidden" id="bno" name="bno" value="<c:out value='${board.bno}'/>">
+                        <input type="hidden" id="pageNum" name="pageNum" value="<c:out value='${cri.pageNum}'/>">
+                        <input type="hidden" id="amount" name="amount" value="<c:out value='${cri.amount}'/>">
+                        <input type="hidden" id="keyword" name="keyword" value="<c:out value='${cri.keyword}'/>">
+                        <input type="hidden" id="type" name="type" value="<c:out value='${cri.type}'/>">
+
                     </form>
             </div>
         </div>

@@ -6,8 +6,8 @@
 
 <script type="text/javascript">
 $(document).ready(function (){
+
     let formObj = $("form");
-    console.log(formObj);
 
     $('button').on('click', function(e){
 
@@ -18,11 +18,27 @@ $(document).ready(function (){
 
         if(operation === 'remove') {
             formObj.attr("action", "/board/remove");
+            console.log(formObj);
         }
 
         if(operation === 'list') {
             formObj.attr("action", "/board/list").attr("method", "get");
+
+            let pageNumTag = $("input[name='pageNum']").clone();
+            let amountTag = $("input[name='amount']").clone();
+            let keywordTag = $("input[name='keyword']").clone();
+            let typeTag = $("input[name='type']").clone();
+
+            console.log(pageNumTag.val());
+            console.log(amountTag.val());
+            console.log(keywordTag.val());
+            console.log(typeTag.val());
             formObj.empty();
+            formObj.append(pageNumTag);
+            formObj.append(amountTag);
+            formObj.append(keywordTag);
+            formObj.append(typeTag);
+
         }
 
         formObj.submit();
@@ -46,6 +62,10 @@ $(document).ready(function (){
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <form role="form" action="/board/modify" method="post">
+                    <input type="hidden" name="pageNum" value="<c:out value='${cri.pageNum}'/>">
+                    <input type="hidden" name="amount" value="<c:out value='${cri.amount}'/>">
+                    <input type="hidden" name="keyword" value="<c:out value='${cri.keyword}'/>">
+                    <input type="hidden" name="type" value="<c:out value='${cri.type}'/>">
                     <div class="form-group">
                         <label>Bno</label> <input class="form-control" name="bno" value="<c:out value='${board.bno}' />" readonly="readonly">
                     </div>
@@ -59,8 +79,8 @@ $(document).ready(function (){
                         <label>writer</label> <input class="form-control" name="writer" value="<c:out value='${board.writer}' />" readonly="readonly">
                     </div>
                     <button type="submit" data-oper="modify" class="btn btn-default">modify</button>
-                    <button type="submit" data-oper="remove" class="btn btn-danger">remove</button>
-                    <button type="submit" data-oper="list" class="btn btn-info">List</button>
+                    <button type="button" data-oper="remove" class="btn btn-danger">remove</button>
+                    <button type="button" data-oper="list" class="btn btn-info">List</button>
                 </form>
             </div>
         </div>

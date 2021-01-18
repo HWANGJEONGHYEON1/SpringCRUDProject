@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.zerock.mapper.BoardMapperTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-01-18T08:55:45" hostname="hwangjeonghyeon-ui-MacBookPro.local" time="0.158">
+  <properties/>
+  <testcase name="testSearch" classname="org.zerock.mapper.BoardMapperTests" time="0.158"/>
+  <system-out><![CDATA[INFO  [DefaultTestContextBootstrapper:248] - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+INFO  [DefaultTestContextBootstrapper:177] - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@782ed03, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1e4820ac, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2e7e35d5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@756d8e10, org.springframework.test.context.transaction.TransactionalTestExecutionListener@65179f4b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3a058e05]
+INFO  [XmlBeanDefinitionReader:316] - Loading XML bean definitions from URL [file:src/main/webapp/WEB-INF/spring/root-context.xml]
+INFO  [GenericApplicationContext:590] - Refreshing org.springframework.context.support.GenericApplicationContext@2406b013: startup date [Mon Jan 18 17:55:45 KST 2021]; root of context hierarchy
+INFO  [AutowiredAnnotationBeanPostProcessor:154] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+INFO  [HikariDataSource:71] - HikariPool-1 - Starting...
+INFO  [connection:541] - 1. Connection opened
+INFO  [audit:175] - 1. Connection.new Connection returned 
+INFO  [PoolBase:526] - HikariPool-1 - Driver does not support get/set network timeout for connections. (net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy.getNetworkTimeout()I)
+INFO  [audit:175] - 1. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 1. Connection.setAutoCommit(true) returned 
+INFO  [audit:175] - 1. Connection.isValid(1) returned true
+INFO  [audit:175] - 1. Connection.getTransactionIsolation() returned 2
+INFO  [HikariDataSource:73] - HikariPool-1 - Start completed.
+INFO  [connection:541] - 2. Connection opened
+INFO  [audit:175] - 2. Connection.new Connection returned 
+INFO  [audit:175] - 2. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 2. Connection.setAutoCommit(true) returned 
+INFO  [connection:541] - 3. Connection opened
+INFO  [audit:175] - 3. Connection.new Connection returned 
+INFO  [audit:175] - 3. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 3. Connection.setAutoCommit(true) returned 
+INFO  [audit:175] - 1. Connection.getAutoCommit() returned true
+INFO  [connection:541] - 4. Connection opened
+INFO  [audit:175] - 4. Connection.new Connection returned 
+INFO  [audit:175] - 4. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 4. Connection.setAutoCommit(true) returned 
+INFO  [audit:175] - 1. PreparedStatement.new PreparedStatement returned 
+INFO  [audit:175] - 1. Connection.prepareStatement(select bno, content,title, writer, regdate, updatedate
+            from(
+                select /*+INDEX_DESC(tbl_board pk_board)*/
+                    rownum rn, bno, title, content, writer, regdate, updatedate
+                from tbl_board
+                where
+
+         
+         
+         (  title like '%' || ? ||'%'
+            
+                OR content like '%' || ? ||'%' ) AND  
+     
+
+         
+            rownum <= ? * ?
+            )
+        where rn > (? -1 ) * ?) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@65312996
+INFO  [connection:541] - 5. Connection opened
+INFO  [audit:175] - 5. Connection.new Connection returned 
+INFO  [audit:175] - 5. Connection.setReadOnly(false) returned 
+INFO  [audit:175] - 5. Connection.setAutoCommit(true) returned 
+INFO  [audit:175] - 1. PreparedStatement.setString(1, "개발자") returned 
+INFO  [audit:175] - 1. PreparedStatement.setString(2, "개발자") returned 
+INFO  [audit:175] - 1. PreparedStatement.setInt(3, 1) returned 
+INFO  [audit:175] - 1. PreparedStatement.setInt(4, 10) returned 
+INFO  [audit:175] - 1. PreparedStatement.setInt(5, 1) returned 
+INFO  [audit:175] - 1. PreparedStatement.setInt(6, 10) returned 
+INFO  [sqlonly:228] - select bno, content,title, writer, regdate, updatedate from( select /*+INDEX_DESC(tbl_board 
+pk_board)*/ rownum rn, bno, title, content, writer, regdate, updatedate from tbl_board where 
+( title like '%' || '개발자' ||'%' OR content like '%' || '개발자' ||'%' ) AND rownum <= 1 * 10 ) 
+where rn > (1 -1 ) * 10 
+
+INFO  [sqltiming:373] - select bno, content,title, writer, regdate, updatedate from( select /*+INDEX_DESC(tbl_board 
+pk_board)*/ rownum rn, bno, title, content, writer, regdate, updatedate from tbl_board where 
+( title like '%' || '개발자' ||'%' OR content like '%' || '개발자' ||'%' ) AND rownum <= 1 * 10 ) 
+where rn > (1 -1 ) * 10 
+ {executed in 12 msec}
+INFO  [audit:175] - 1. PreparedStatement.execute() returned true
+INFO  [resultset:175] - 1. ResultSet.new ResultSet returned 
+INFO  [audit:175] - 1. PreparedStatement.getResultSet() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@54185f7b
+INFO  [resultset:175] - 1. ResultSet.getMetaData() returned oracle.jdbc.driver.OracleResultSetMetaData@2e4c0130
+INFO  [resultset:175] - 1. ResultSet.getType() returned 1003
+INFO  [resultset:175] - 1. ResultSet.next() returned true
+INFO  [resultset:175] - 1. ResultSet.getLong(BNO) returned 458758
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(CONTENT) returned 카카오 개발자가 되기 위한 내용
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(TITLE) returned 카카오 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(WRITER) returned 쥬니어 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(REGDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(UPDATEDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.next() returned true
+INFO  [resultset:175] - 1. ResultSet.getLong(BNO) returned 458756
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(CONTENT) returned 기본 스프링 다지기
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(TITLE) returned 카카오 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(WRITER) returned 황정현
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(REGDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(UPDATEDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.next() returned true
+INFO  [resultset:175] - 1. ResultSet.getLong(BNO) returned 458752
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(CONTENT) returned 카카오 개발자가 되기 위한 내용
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(TITLE) returned 카카오 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(WRITER) returned 쥬니어 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(REGDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(UPDATEDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.next() returned true
+INFO  [resultset:175] - 1. ResultSet.getLong(BNO) returned 458750
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(CONTENT) returned 기본 스프링 다지기
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(TITLE) returned 카카오 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(WRITER) returned 황정현
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(REGDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(UPDATEDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.next() returned true
+INFO  [resultset:175] - 1. ResultSet.getLong(BNO) returned 458744
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(CONTENT) returned 카카오 개발자가 되기 위한 내용
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(TITLE) returned 카카오 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(WRITER) returned 쥬니어 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [connection:541] - 6. Connection opened
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(REGDATE) returned 2021-01-18 01:13:44.0
+INFO  [audit:175] - 6. Connection.new Connection returned 
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [audit:175] - 6. Connection.setReadOnly(false) returned 
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(UPDATEDATE) returned 2021-01-18 01:13:44.0
+INFO  [audit:175] - 6. Connection.setAutoCommit(true) returned 
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.next() returned true
+INFO  [resultset:175] - 1. ResultSet.getLong(BNO) returned 458742
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(CONTENT) returned 기본 스프링 다지기
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(TITLE) returned 카카오 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(WRITER) returned 황정현
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(REGDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(UPDATEDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.next() returned true
+INFO  [resultset:175] - 1. ResultSet.getLong(BNO) returned 458738
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(CONTENT) returned 카카오 개발자가 되기 위한 내용
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(TITLE) returned 카카오 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(WRITER) returned 쥬니어 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(REGDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(UPDATEDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.next() returned true
+INFO  [resultset:175] - 1. ResultSet.getLong(BNO) returned 458736
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(CONTENT) returned 기본 스프링 다지기
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(TITLE) returned 카카오 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(WRITER) returned 황정현
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(REGDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(UPDATEDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.next() returned true
+INFO  [resultset:175] - 1. ResultSet.getLong(BNO) returned 458730
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(CONTENT) returned 카카오 개발자가 되기 위한 내용
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(TITLE) returned 카카오 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(WRITER) returned 쥬니어 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(REGDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(UPDATEDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.next() returned true
+INFO  [resultset:175] - 1. ResultSet.getLong(BNO) returned 458728
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(CONTENT) returned 기본 스프링 다지기
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(TITLE) returned 카카오 개발자
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getString(WRITER) returned 황정현
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(REGDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultset:175] - 1. ResultSet.getTimestamp(UPDATEDATE) returned 2021-01-18 01:13:44.0
+INFO  [resultset:175] - 1. ResultSet.wasNull() returned false
+INFO  [resultsettable:610] - 
+|-------|------------------|--------|--------|----------------------|----------------------|
+|bno    |content           |title   |writer  |regdate               |updatedate            |
+|-------|------------------|--------|--------|----------------------|----------------------|
+|458758 |카카오 개발자가 되기 위한 내용 |카카오 개발자 |쥬니어 개발자 |2021-01-18 01:13:44.0 |2021-01-18 01:13:44.0 |
+|458756 |기본 스프링 다지기        |카카오 개발자 |황정현     |2021-01-18 01:13:44.0 |2021-01-18 01:13:44.0 |
+|458752 |카카오 개발자가 되기 위한 내용 |카카오 개발자 |쥬니어 개발자 |2021-01-18 01:13:44.0 |2021-01-18 01:13:44.0 |
+|458750 |기본 스프링 다지기        |카카오 개발자 |황정현     |2021-01-18 01:13:44.0 |2021-01-18 01:13:44.0 |
+|458744 |카카오 개발자가 되기 위한 내용 |카카오 개발자 |쥬니어 개발자 |2021-01-18 01:13:44.0 |2021-01-18 01:13:44.0 |
+|458742 |기본 스프링 다지기        |카카오 개발자 |황정현     |2021-01-18 01:13:44.0 |2021-01-18 01:13:44.0 |
+|458738 |카카오 개발자가 되기 위한 내용 |카카오 개발자 |쥬니어 개발자 |2021-01-18 01:13:44.0 |2021-01-18 01:13:44.0 |
+|458736 |기본 스프링 다지기        |카카오 개발자 |황정현     |2021-01-18 01:13:44.0 |2021-01-18 01:13:44.0 |
+|458730 |카카오 개발자가 되기 위한 내용 |카카오 개발자 |쥬니어 개발자 |2021-01-18 01:13:44.0 |2021-01-18 01:13:44.0 |
+|458728 |기본 스프링 다지기        |카카오 개발자 |황정현     |2021-01-18 01:13:44.0 |2021-01-18 01:13:44.0 |
+|-------|------------------|--------|--------|----------------------|----------------------|
+
+INFO  [resultset:175] - 1. ResultSet.next() returned false
+INFO  [resultset:175] - 1. ResultSet.close() returned void
+INFO  [audit:175] - 1. Connection.getMetaData() returned oracle.jdbc.driver.OracleDatabaseMetaData@49698071
+INFO  [audit:175] - 1. PreparedStatement.isClosed() returned false
+INFO  [audit:175] - 1. PreparedStatement.close() returned 
+INFO  [audit:175] - 1. Connection.clearWarnings() returned 
+INFO  [BoardMapperTests:91] - BoardVO(bno=458758, title=카카오 개발자, content=카카오 개발자가 되기 위한 내용, writer=쥬니어 개발자, regDate=Mon Jan 18 01:13:44 KST 2021, updateDate=Mon Jan 18 01:13:44 KST 2021)
+INFO  [BoardMapperTests:91] - BoardVO(bno=458756, title=카카오 개발자, content=기본 스프링 다지기, writer=황정현, regDate=Mon Jan 18 01:13:44 KST 2021, updateDate=Mon Jan 18 01:13:44 KST 2021)
+INFO  [BoardMapperTests:91] - BoardVO(bno=458752, title=카카오 개발자, content=카카오 개발자가 되기 위한 내용, writer=쥬니어 개발자, regDate=Mon Jan 18 01:13:44 KST 2021, updateDate=Mon Jan 18 01:13:44 KST 2021)
+INFO  [BoardMapperTests:91] - BoardVO(bno=458750, title=카카오 개발자, content=기본 스프링 다지기, writer=황정현, regDate=Mon Jan 18 01:13:44 KST 2021, updateDate=Mon Jan 18 01:13:44 KST 2021)
+INFO  [BoardMapperTests:91] - BoardVO(bno=458744, title=카카오 개발자, content=카카오 개발자가 되기 위한 내용, writer=쥬니어 개발자, regDate=Mon Jan 18 01:13:44 KST 2021, updateDate=Mon Jan 18 01:13:44 KST 2021)
+INFO  [BoardMapperTests:91] - BoardVO(bno=458742, title=카카오 개발자, content=기본 스프링 다지기, writer=황정현, regDate=Mon Jan 18 01:13:44 KST 2021, updateDate=Mon Jan 18 01:13:44 KST 2021)
+INFO  [BoardMapperTests:91] - BoardVO(bno=458738, title=카카오 개발자, content=카카오 개발자가 되기 위한 내용, writer=쥬니어 개발자, regDate=Mon Jan 18 01:13:44 KST 2021, updateDate=Mon Jan 18 01:13:44 KST 2021)
+INFO  [BoardMapperTests:91] - BoardVO(bno=458736, title=카카오 개발자, content=기본 스프링 다지기, writer=황정현, regDate=Mon Jan 18 01:13:44 KST 2021, updateDate=Mon Jan 18 01:13:44 KST 2021)
+INFO  [BoardMapperTests:91] - BoardVO(bno=458730, title=카카오 개발자, content=카카오 개발자가 되기 위한 내용, writer=쥬니어 개발자, regDate=Mon Jan 18 01:13:44 KST 2021, updateDate=Mon Jan 18 01:13:44 KST 2021)
+INFO  [BoardMapperTests:91] - BoardVO(bno=458728, title=카카오 개발자, content=기본 스프링 다지기, writer=황정현, regDate=Mon Jan 18 01:13:44 KST 2021, updateDate=Mon Jan 18 01:13:44 KST 2021)
+]]></system-out>
+  <system-err><![CDATA[log4j:WARN No such property [tã]]>&#x97;<![CDATA[arget] in org.apache.log4j.ConsoleAppender.
+]]></system-err>
+</testsuite>

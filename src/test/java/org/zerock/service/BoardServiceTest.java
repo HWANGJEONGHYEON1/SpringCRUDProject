@@ -35,10 +35,6 @@ public class BoardServiceTest {
         service.register(boardVO);
     }
 
-    @Test
-    public void testGetList() {
-        service.getList().forEach(board -> log.info(board));
-    }
 
     @Test
     public void testGet() {
@@ -59,6 +55,10 @@ public class BoardServiceTest {
     @Test
     public void testDelete() {
         log.info(service.remove(3L));
+    }
+
+    @Test
+    public void testListPaging() throws Exception {
     }
 
 }
