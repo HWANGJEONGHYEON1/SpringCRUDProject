@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.zerock.domain.Criteria;
+import org.zerock.domain.ReplyPageDTO;
 import org.zerock.domain.ReplyVO;
 import org.zerock.service.ReplyService;
 
@@ -36,18 +37,18 @@ public class ReplyController {
 
     }
 
-    @GetMapping(value = "/pages/{bno}/{page}",
-        produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE})
-    public ResponseEntity<List<ReplyVO>> getList(
-            @PathVariable("page") int page,
-            @PathVariable("bno") Long bno
-    ){
-        log.info("Reply Controller getList "  );
-        Criteria cri = new Criteria(page, 10);
-        log.info(cri);
-
-        return new ResponseEntity<>(service.getList(cri, bno), HttpStatus.OK);
-    }
+//    @GetMapping(value = "/pages/{bno}/{page}",
+//        produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE})
+//    public ResponseEntity<List<ReplyVO>> getList(
+//            @PathVariable("page") int page,
+//            @PathVariable("bno") Long bno
+//    ){
+//        log.info("Reply Controller getList "  );
+//        Criteria cri = new Criteria(page, 10);
+//        log.info(cri);
+//
+//        return new ResponseEntity<>(service.getList(cri, bno), HttpStatus.OK);
+//    }
 
     @GetMapping(value = "/{rno}", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE})
     public ResponseEntity<ReplyVO> get(@PathVariable("rno") Long rno){
@@ -78,9 +79,13 @@ public class ReplyController {
                 : new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+    @GetMapping(value = "/pages/{bno}/{page}", produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE})
+    public ResponseEntity<ReplyPageDTO> getList(@PathVariable("bno") Long bno, @PathVariable("page") int page) {
+        Criteria cri = new Criteria(page, 10);
+        log.info("ReplyController, getLIst bno" + bno);
+        log.info("cri " + cri);
 
-
-
-
+        return new ResponseEntity<>(service.getListPage(cri, bno), HttpStatus.OK);
+    }
 
 }

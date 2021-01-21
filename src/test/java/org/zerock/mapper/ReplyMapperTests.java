@@ -76,4 +76,12 @@ public class ReplyMapperTests {
         List<ReplyVO> replies = mapper.getListWithPaging(cri, bnoArr[0]);
         replies.forEach(reply -> log.info(reply));
     }
+
+    @Test
+    public void teetList2() {
+        Criteria cri = new Criteria(2, 10);
+
+        List<ReplyVO> replies = mapper.getListWithPaging(cri, 458761L);
+        replies.forEach(reply -> log.info(reply));
+    }
 }

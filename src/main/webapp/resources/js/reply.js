@@ -26,7 +26,7 @@ let replyService = (function (){
         $.getJSON("/replies/pages/" + bno + "/" + page + ".json",
             function(data){
                 if(callback){
-                    callback(data);
+                    callback(data.replyCnt, data.list);
                 }
             }).fail(function(xhr, status, err){
                 if(error){
@@ -99,7 +99,7 @@ let replyService = (function (){
             let mm = dataObj.getMonth();
             let dd = dataObj.getDate();
 
-            return [ (yy > 9 ? '' : '0' ) + y,':', (mm > 9 ? '' : '0' ) + mm,':', (dd > 9 ? '' : '0' ) + dd,].join('');
+            return [ (yy > 9 ? '' : '0' ) + yy,':', (mm > 9 ? '' : '0' ) + mm,':', (dd > 9 ? '' : '0' ) + dd,].join('');
         }
     }
 

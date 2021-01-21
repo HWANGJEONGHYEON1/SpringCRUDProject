@@ -12,26 +12,74 @@ $(document).ready(function(){
    let bnoValue = '<c:out value="${board.bno}" />';
    let replyUL = $(".chat");
 
+    let pageNum;
+    let replyPageFooter = $(".panel-footer");
+
    showList(1);
 
    function showList(page){
-       replyService.getList({ bno : bnoValue, page: page || 1}, function(list){
-            console.log(list);
-           let str = [];
-           if(list == null || list.length == 0){
-               replyUL.html("");
-               return ;
-           }
-           for( let i = 0, len = list.length || 0 ; i < len ; i++){
+       replyService.getList({ bno : bnoValue, page: page || 1},
+           function(replyCnt,list){
+               let str = [];
 
-               str.push("<li class='left clearfix' data-rno='"+list[i].rno+"'>");
-               str.push("   <div><div class='header'><strong class='primary-font'>" + list[i].replyer+"</strong>");
-               str.push("       <small class='pull-right text-muted'>" + replyService.displayTime(list[i].replyDate) + "</small></div>");
-               str.push("       <p>" + list[i].reply + "</p>");
-               str.push("   </div></li>")
-           }
-           replyUL.html(str);
+               if(page == -1 ){
+                   pageNum = Math.ceil(replyCnt / 10.0);
+                   showList(pageNum);
+                   return ;
+               }
+               if(list == null || list.length == 0){
+                   replyUL.html("");
+                   return ;
+               }
+               for( let i = 0, len = list.length || 0 ; i < len ; i++){
+
+                   str.push("<li class='left clearfix' data-rno='"+list[i].rno+"'>");
+                   str.push("   <div><div class='header'><strong class='primary-font'>" + list[i].replyer+"</strong>");
+                   str.push("       <small class='pull-right text-muted'>" + replyService.displayTime(list[i].replyDate) + "</small></div>");
+                   str.push("       <p>" + list[i].reply + "</p>");
+                   str.push("   </div></li>")
+               }
+               replyUL.html(str);
+
+               showreplyPage(replyCnt);
        })
+   }
+
+
+   function showreplyPage(replyCnt) {
+       let endNum = Math.ceil(pageNum / 10.0) * 10;
+       let startNum = endNum - 9;
+
+       let prev = startNum != 1;
+       let next = false;
+
+       if(endNum * 10 >= replyCnt) {
+           endNum = Math.ceil(pageNum / 10.0);
+       }
+
+       if(endNum * 10 < replyCnt){
+           next = true;
+       }
+
+       let str = "<ul class='pagination pull-right'>";
+
+       if(prev){
+           str += "<li class='page-item'><a class='page-link' href='"+(startNum-1)+"'>Previous</a></li>";
+       }
+
+       for( let i = startNum; i <= endNum; i++ ){
+           let active = pageNum == i? "active" : "";
+
+           str += "<li class='page-item'><a class='page-link' href='"+i+"'>"+i+"</a></li>";
+       }
+
+       if(next) {
+           str += "<li class='page-item'><a class='page-link' href='"+(endNum + 1)+"'>Next</a></li> ";
+           str += "</ul></div>";
+       }
+
+       console.log(str);
+       replyPageFooter.html(str);
    }
 
    let modal = $(".modal");
@@ -65,7 +113,7 @@ $(document).ready(function(){
                alert("Result : "+ result);
                modal.find("input").val("");
                modal.modal("hide");
-               showList(1);
+               showList(-1);
            }
        );
    });
@@ -75,7 +123,7 @@ $(document).ready(function(){
        replyService.update(reply, function(result){
            alert(result);
            modal.modal("hide");
-           showList(1);
+           showList(pageNum);
        })
    });
 
@@ -85,7 +133,7 @@ $(document).ready(function(){
        replyService.remove(rno, function(result){
            alert(result);
            modal.modal("hide");
-           showList(1);
+           showList(pageNum);
        })
    })
 
@@ -108,25 +156,17 @@ $(document).ready(function(){
        })
    })
 
+    replyPageFooter.on("click", "li a", function (e){
+        e.preventDefault();
 
-    // replyService.remove(132, function(count){
-    //     console.log(count);
-    //
-    //     if(count == "success") alert("removed");
-    // }, function(err){
-    //     alert('errrr');
-    // });
+        console.log("page click");
 
-    // replyService.update(
-    //     {
-    //         rno : 135,
-    //         bno : bnoValue,
-    //         reply : "Modified reply"
-    //     }, function(result){
-    //         alert('수정완료');
-    //     }
-    // )
+        let targetPageNum = $(this).attr("href");
+        console.log("target : " + targetPageNum);
 
+        pageNum = targetPageNum;
+        showList(pageNum);
+    } )
 
    $("button[data-oper='modify']").on("click", function (e){
        operForm.attr("action", "/board/modify").submit();
@@ -245,8 +285,10 @@ $(document).ready(function(){
                     </li>
                 </ul>
             </div>
+            <div class="panel-footer"></div>
         </div>
     </div>
 </div>
+
 
 <%@include file="../includes/footer.jsp"%>
