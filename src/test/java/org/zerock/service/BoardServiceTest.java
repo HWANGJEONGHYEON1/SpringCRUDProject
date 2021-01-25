@@ -38,7 +38,7 @@ public class BoardServiceTest {
 
     @Test
     public void testGet() {
-        log.info(service.get(8L));
+        log.info(service.get(10000000000000L));
     }
 
     @Test
@@ -60,5 +60,6 @@ public class BoardServiceTest {
     @Test
     public void testListPaging() throws Exception {
     }
+
 
 }

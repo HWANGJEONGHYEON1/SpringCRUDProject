@@ -107,9 +107,11 @@ $(document).ready(function(){
            replyer : modalInputReplyer.val(),
            bno: bnoValue
        };
+       console.log("등록버튼 클릭");
        replyService.add(
            reply,
            function (result) {
+               console.log("등록버튼 파라메터");
                alert("Result : "+ result);
                modal.find("input").val("");
                modal.modal("hide");
