@@ -55,6 +55,9 @@ dependencies {
 
     compile group: 'org.springframework', name: 'spring-tx', version: '5.2.11.RELEASE'
 
+    compile group: 'net.coobird', name: 'thumbnailator', version: '0.4.8'
 
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.5'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.9.5'
 
 }
