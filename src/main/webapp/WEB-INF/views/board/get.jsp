@@ -4,9 +4,88 @@
 
 <%@include file="../includes/header.jsp"%>
 
+<style>
+    .uploadResult {
+        width: 100%;
+        background-color: gray;
+    }
+
+    .uploadResult ul {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .uploadResult ul li {
+        list-style : none;
+        padding: 10px;
+        align-content: center;
+        text-align: center;
+    }
+
+    .uploadResult ul li img {
+        width: 100px
+    }
+
+    .uploadResult ul li span{
+        color: white;
+    }
+
+    .bigPictureWrapper {
+        position: absolute;
+        display: none;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        top: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: gray;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+    .bigPicture {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bigPicture img {
+        width: 600px;
+    }
+
+</style>
+
 <script type="text/javascript" src="/resources/js/reply.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
+
+    (function (){
+        let bno = '<c:out value="${board.bno}" />';
+        $.getJSON("/board/getAttachList", {bno: bno}, function(arr){
+            console.log(arr);
+
+            let str = "";
+
+            $(arr).each(function(i, attach){
+                if(attach.fileType) {
+                    let fileCallPath = encodeURIComponent(attach.uploadPath + "/s_" + attach.uuid + "_" + attach.fileName);
+                    str += "<li data-path = '" + attach.uploadPath + "' data-uuid='" + attach.uuid + "' data-filename='"+attach.fileName+"' data-type='"+attach.fileType+"'><div>";
+                    str += "<img src='/display?fileName=" + fileCallPath + "'>";
+                    str += "</div></li>";
+                } else {
+                    str += "<li data-path = '" + attach.uploadPath + "' data-uuid='" + attach.uuid + "' data-filename='"+attach.fileName+"' data-type='"+attach.fileType+"'><div>";
+                    str += "<span> " + attach.fileName + "</span><br />";
+                    str += "<img src='/resources/img/undraw_rocket.svg'>";
+                    str += "</div></li>";
+                }
+            });
+            $(".uploadResult ul").html(str);
+        })
+    })();
    let operForm = $("#openForm");
 
    let bnoValue = '<c:out value="${board.bno}" />';
@@ -179,6 +258,34 @@ $(document).ready(function(){
        operForm.submit();
     });
 
+   $(".uploadResult").on("click", "li", function (e){
+       console.log("view image");
+       let liObj = $(this);
+
+       let path = encodeURIComponent(liObj.data("path") + "/" + liObj.data("uuid") + "_" + liObj.data("filename"));
+
+       if(liObj.data("type")){
+           showImage(path.replace(new RegExp(/\\/g), "/"));
+       } else {
+           self.location="/download?fileName="+path
+       }
+   });
+
+   $(".bigPictureWrapper").on("click", function (e){
+       $(".bigPicture").animate({width : '0%', height: '0%'}, 1000);
+       setTimeout(function(){
+           $(".bigPictureWrapper").hide();
+       },1000);
+   })
+
+    function showImage(fileCallPath) {
+       alert(fileCallPath);
+       $(".bigPictureWrapper").css("display","flex").show();
+       $(".bigPicture")
+        .html("<img src='/display?fileName=" + fileCallPath + "'>" )
+        .animate({width : '100%', height : '100%'}, 1000);
+    }
+
 });
 </script>
 <div class="row">
@@ -266,6 +373,23 @@ $(document).ready(function(){
     </div>
 </div>
 
+<div class="bigPictureWrapper">
+    <div class="bigPicture"></div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Files</div>
+            <div class="panel-body">
+                <div class="uploadResult">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-lg-12">
         <div class="panel panel-default">
@@ -273,7 +397,6 @@ $(document).ready(function(){
                 <i class="fa fa-comments fa-fw"></i> Reply
                 <button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">New Reply</button>
             </div>
-
             <div class="panel-body">
                 <ul class="chat">
                     <li class="left clearfix" data-rno="135">
@@ -291,6 +414,4 @@ $(document).ready(function(){
         </div>
     </div>
 </div>
-
-
 <%@include file="../includes/footer.jsp"%>
