@@ -16,6 +16,9 @@ import org.zerock.domain.PageDTO;
 import org.zerock.service.BoardService;
 
 import java.awt.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @Controller
@@ -23,6 +26,8 @@ import java.util.List;
 @RequestMapping("/board/*")
 @AllArgsConstructor
 public class BoardController {
+
+    static final String uploadFolder = "/Users/hwangjeonghyeon/IdeaProjects/upload/";
 
     private BoardService service;
 
@@ -79,16 +84,19 @@ public class BoardController {
     public String remove(@RequestParam("bno") Long bno,@ModelAttribute("cri") Criteria cri ,RedirectAttributes rttr){
         log.info(" #Controller, remove " + bno);
 
+        List<BoardAttachVO> attachList = service.getAttachList(bno);
+
+
         if(service.remove(bno)) {
+
+            deleteFiles(attachList);
+
             rttr.addFlashAttribute("result", "success");
+
         }
 
-        rttr.addAttribute("pageNum", cri.getPageNum());
-        rttr.addAttribute("amount", cri.getAmount());
-        rttr.addAttribute("type", cri.getType());
-        rttr.addAttribute("keyword", cri.getKeyword());
 
-        return "redirect:/board/list";
+        return "redirect:/board/list" + cri.getListLink();
     }
 
     @GetMapping(value = "/getAttachList", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -96,6 +104,32 @@ public class BoardController {
     public ResponseEntity<List<BoardAttachVO>> getAttachList(Long bno){
         log.info(" BoardController, getAttach bno" + bno);
         return new ResponseEntity<>(service.getAttachList(bno), HttpStatus.OK);
+    }
+
+    private void deleteFiles(List<BoardAttachVO> attachList){
+        if(attachList == null || attachList.size() ==0){
+            return ;
+        }
+
+        log.info("delete attach files .....");
+        log.info(attachList);
+
+        attachList.forEach(attach -> {
+            try {
+                Path file = Paths.get(uploadFolder + attach.getUploadPath() + "\\" + attach.getUuid() + "_" + attach.getFileName());
+
+                Files.deleteIfExists(file);
+
+                if(Files.probeContentType(file).startsWith("imagef")){
+                    Path thumbNail = Paths.get(uploadFolder + attach.getUploadPath() + "\\s_" + attach.getUuid() + "_" + attach.getFileName());
+                    Files.delete(thumbNail);
+                }
+            } catch (Exception e) {
+                log.error("delete File error"+e.getMessage());
+            }
+
+
+        });
     }
 
 
