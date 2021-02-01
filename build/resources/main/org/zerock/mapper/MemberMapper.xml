@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//E.N"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.MemberMapper">
+    <resultMap type="org.zerock.domain.MemberVO" id="memberMap">
+        <id property="userid" column="userid" />
+        <id property="userpw" column="userpw" />
+        <id property="username" column="username" />
+        <id property="regDate" column="regDate" />
+        <id property="updateDate" column="updateDate" />
+        <collection property="authList" resultMap="authMap"></collection>
+    </resultMap>
+
+    <resultMap type="org.zerock.domain.AuthVO" id="authMap">
+        <result property="userid" column="userid" />
+        <result property="auth" column="auth" />
+    </resultMap>
+
+    <select id="read" resultMap="memberMap">
+        SELECT mem.userid, userpw, username, enabled, regdate, updatedate, auth
+        FROM tbl_member mem LEFT OUTER JOIN tbl_member_auth auth on mem.userid = auth.userid
+        WHERE mem.userid = #{userid}
+    </select>
+
+</mapper>
