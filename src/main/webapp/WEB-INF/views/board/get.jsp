@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <%@include file="../includes/header.jsp"%>
 
@@ -170,6 +171,15 @@ $(document).ready(function(){
    let modalRemoveBtn = $("#modalRemoveBtn");
    let modalRegisterBtn = $("#modalRegisterBtn");
 
+   let replyer = null;
+
+    <sec:authorize access="isAuthenticated()">
+        replyer = '<sec:authentication property="principal.username"/>';
+    </sec:authorize>
+
+    let csrfHeaderName = "${_csrf.headerName}";
+    let csrfTokenValue = "${_csrf.token}";
+
    $("#addReplyBtn").on("click", function(e){
 
        modal.find("input").val("");
@@ -199,19 +209,51 @@ $(document).ready(function(){
        );
    });
 
+   $(document).ajaxSend(function (e,xhr,options){
+       xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+   })
+
    modalModBtn.on("click", function(e){
-       let reply = {rno : modal.data("rno"), reply: modalInputReplyer.val()};
+
+       let originalReplyer = modalInputReplyer.val();
+       let reply = {rno : modal.data("rno"), reply: modalInputReply.val(), replyer: originalReplyer};
+       if(!replyer) {
+           alert("로그인 후 수정 가능합니다.");
+           modal.modal("hide");
+           return ;
+       }
+
+       if(replyer != originalReplyer) {
+           alert("자신이 작성한 댓글만 가능합니다.");
+           modal.modal("hide");
+           return false;
+       }
+
        replyService.update(reply, function(result){
            alert(result);
            modal.modal("hide");
            showList(pageNum);
-       })
+       });
    });
 
    modalRemoveBtn.on("click", function (e){
        let rno = modal.data("rno");
 
-       replyService.remove(rno, function(result){
+       if(!replyer) {
+           alert("로그인 후 삭제가 가능합니다.");
+           modal.modal("hide");
+           return ;
+       }
+
+       let originalReplyer = modalInputReplyer.val();
+
+       if(replyer != originalReplyer) {
+           alert("자신이 작성한 댓글만 삭제가 가능합니다.");
+           modal.modal("hide");
+           return ;
+       }
+
+       replyService.remove(rno, originalReplyer, function(result){
            alert(result);
            modal.modal("hide");
            showList(pageNum);
@@ -358,7 +400,13 @@ $(document).ready(function(){
                     <label>Register Date</label>
                     <input class="form-control" name="registerDate" value="<fmt:formatDate value='${board.regDate}' pattern='yyyy-mm-dd' />" readonly="readonly">
                 </div>
-                <button data-oper="modify" onClick="location.href='/board/modify?bno=<c:out value="${board.bno}" />'" class="btn btn-default">modify</button>
+                <sec:authentication property="principal" var="pinfo" />
+                <sec:authorize access="isAuthenticated()">
+                    <c:if test="${pinfo.username eq board.writer}">
+                        <button data-oper="modify" onClick="location.href='/board/modify?bno=<c:out value="${board.bno}" />'" class="btn btn-default">modify</button>
+                    </c:if>
+                </sec:authorize>
+
                 <button data-oper="list" onclick="location.href='/board/list' " class="btn btn-info">list</button>
 
                 <form id="openForm" action="/board/modify" method="get">
@@ -395,7 +443,9 @@ $(document).ready(function(){
         <div class="panel panel-default">
             <div class="panel-heading">
                 <i class="fa fa-comments fa-fw"></i> Reply
-                <button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">New Reply</button>
+                <sec:authorize access="isAuthenticated()">
+                    <button id="addReplyBtn" class="btn btn-primary btn-xs pull-right">New Reply</button>
+                </sec:authorize>
             </div>
             <div class="panel-body">
                 <ul class="chat">

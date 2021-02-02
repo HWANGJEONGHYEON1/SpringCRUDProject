@@ -27,7 +27,7 @@ public class FileCheckTask {
     @Setter(onMethod_ = @Autowired)
     private BoardAttachMapper mapper;
 
-    @Scheduled(cron = "0 * * 2 * * ")
+    @Scheduled(cron = "0 * * * 1 * ")
     public void checkFile() throws Exception {
         log.warn("File check Task Run ........");
         log.warn(new Date());

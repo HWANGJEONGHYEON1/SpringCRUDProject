@@ -38,6 +38,6 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
             return ;
         }
 
-        response.sendRedirect("/");
+        response.sendRedirect("/board/list");
     }
 }

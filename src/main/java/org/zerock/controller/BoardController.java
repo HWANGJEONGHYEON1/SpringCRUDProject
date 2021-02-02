@@ -2,9 +2,12 @@ package org.zerock.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
+import oracle.jdbc.proxy.annotation.Pre;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -51,6 +54,7 @@ public class BoardController {
     }
 
     @PostMapping("/register")
+    @PreAuthorize("isAuthenticated()")
     public String register(BoardVO board, RedirectAttributes rttr) {
         log.info(" #Controller, register " + board);
 
@@ -71,6 +75,7 @@ public class BoardController {
         model.addAttribute("board", service.get(bno));
     }
 
+    @PreAuthorize("principal.username == #writer")
     @PostMapping("/modify")
     public String modify(BoardVO board, @ModelAttribute("cri") Criteria cri ,RedirectAttributes rttr) {
         log.info(" #Controller, modify " + board);
@@ -80,8 +85,9 @@ public class BoardController {
         return "redirect:/board/list" + cri.getListLink();
     }
 
+    @PreAuthorize("principal.username == #writer")
     @PostMapping("/remove")
-    public String remove(@RequestParam("bno") Long bno,@ModelAttribute("cri") Criteria cri ,RedirectAttributes rttr){
+    public String remove(@RequestParam("bno") Long bno,@ModelAttribute("cri") Criteria cri ,RedirectAttributes rttr, String writer){
         log.info(" #Controller, remove " + bno);
 
         List<BoardAttachVO> attachList = service.getAttachList(bno);

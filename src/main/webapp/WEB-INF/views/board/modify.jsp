@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <%@include file="../includes/header.jsp"%>
 
@@ -178,6 +179,9 @@ $(document).ready(function (){
         return true;
     }
 
+    let csrfHeaderName = "${_csrf.headerName}";
+    let csrfTokenValue = "${_csrf.token}";
+
     $("input[type='file']").change(function(e){
 
         let formData = new FormData();
@@ -197,6 +201,9 @@ $(document).ready(function (){
             url: '/uploadAjaxAction',
             processData: false,
             contentType: false,
+            beforeSend: function(xhr){
+                xhr.setRequestHeader(csrfHeaderName,csrfTokenValue);
+            },
             data: formData,
             type: 'POST',
             dataType: 'json',
@@ -205,7 +212,7 @@ $(document).ready(function (){
                 showUploadResult(result);
             }
         })
-    })
+    });
 
     let showUploadResult = (uploadResultArr) => {
         if(!uploadResultArr || uploadResultArr.length == 0) return false;
@@ -263,6 +270,7 @@ $(document).ready(function (){
             <!-- /.panel-heading -->
             <div class="panel-body">
                 <form role="form" action="/board/modify" method="post">
+                    <input typ="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     <input type="hidden" name="pageNum" value="<c:out value='${cri.pageNum}'/>">
                     <input type="hidden" name="amount" value="<c:out value='${cri.amount}'/>">
                     <input type="hidden" name="keyword" value="<c:out value='${cri.keyword}'/>">
@@ -279,8 +287,13 @@ $(document).ready(function (){
                     <div class="form-group">
                         <label>writer</label> <input class="form-control" name="writer" value="<c:out value='${board.writer}' />" readonly="readonly">
                     </div>
-                    <button type="submit" data-oper="modify" class="btn btn-default">modify</button>
-                    <button type="button" data-oper="remove" class="btn btn-danger">remove</button>
+                    <sec:authentication property="principal" var="pinfo" />
+                    <sec:authorize access="isAuthenticated()">
+                        <c:if test="${pinfo.username eq board.writer}">
+                            <button type="submit" data-oper="modify" class="btn btn-default">modify</button>
+                            <button type="button" data-oper="remove" class="btn btn-danger">remove</button>
+                        </c:if>
+                    </sec:authorize>
                     <button type="button" data-oper="list" class="btn btn-info">List</button>
                 </form>
             </div>
