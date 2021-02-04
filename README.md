@@ -28,6 +28,7 @@
 
 
 <b> 개발환경</b>
+```
 Java version: 1.8
 Spring version: 5.0.7
 Lombok version: 1.18.16
@@ -36,6 +37,7 @@ Default Encoding: UTF-8
 Default SCM : git
 Tool : SourceTree, Intellij
 Docker ( Oracle 연동 )
+```
 
 
 <b>스프링 폴더구조</b>
